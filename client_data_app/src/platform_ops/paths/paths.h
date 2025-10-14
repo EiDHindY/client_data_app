@@ -5,8 +5,13 @@
 
 #include <filesystem>
 
+
+std::filesystem::path get_exe_dir_path();
+
+
 namespace platform_ops_paths
 {
+#pragma region get_exe_dir_path Docs
 	/**
 	 * @brief Gets the directory path where the currently running executable is located.
 	 *
@@ -78,6 +83,7 @@ namespace platform_ops_paths
 	 * @since Version 1.0
 	 * @author dod
 	*/
+#pragma endregion
 	std::filesystem::path get_exe_dir_path();
 
 	/*
