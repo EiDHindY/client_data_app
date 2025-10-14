@@ -1,13 +1,14 @@
 ﻿//platform_ops/path.cpp
 
 #include "paths.h"
+#include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <Windows.h>
 #include <stdexcept> // for runtime errors
 
 
 namespace platform_ops_paths
 {
-	std::filesystem::path get_exe_dir_path()
+	auto get_exe_dir_path()
 	{
 
 		std::wstring exe_path(MAX_PATH, L'\0');
@@ -47,6 +48,16 @@ namespace platform_ops_paths
 		}
 		exe_path.resize(exe_path_length); // trim to the actual length to save memory
 		return std::filesystem::path(exe_path).parent_path(); // return the parent dir of the .exe file
+	}
+
+	auto get_original_file_path(const std::filesystem::path& exe_file_path)
+	{
+		auto original_file_path = std::filesystem::path(
+			exe_file_path
+			/ infrastructure_names::DATA_DIR_NAME
+			/ infrastructure_names::ORIGINAL_FILE_NAME);
+
+		return original_file_path;
 	}
 
 }
