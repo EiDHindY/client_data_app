@@ -4,7 +4,6 @@
 // to avoid multiple definitions
 
 #include <filesystem>
-#include <string>
 
 namespace platform_ops_paths
 {
@@ -80,5 +79,11 @@ namespace platform_ops_paths
 	 * @author dod
 	*/
 	std::filesystem::path get_exe_dir_path();
+
+	/*
+
+	*/
+
+
 }// platform_ops_paths
 

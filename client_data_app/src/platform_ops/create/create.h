@@ -88,6 +88,6 @@ namespace platform_ops_create
 	 * @author dod
 	 **/
 
-	bool create_data_dir(const std::filesystem::path& exe_file_path, const std::string& data_dir_name);
+	bool create_data_dir(const std::filesystem::path& exe_file_path);
 }//end platform_ops_helper
 
