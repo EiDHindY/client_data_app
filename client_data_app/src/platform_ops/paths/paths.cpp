@@ -2,6 +2,7 @@
 
 #include "paths.h"
 #include <Windows.h>
+#include <stdexcept> // for runtime errors
 
 
 namespace platform_ops_paths

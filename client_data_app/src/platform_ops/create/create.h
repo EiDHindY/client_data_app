@@ -3,7 +3,7 @@
 #pragma once // to avoid multiple definitions
 
 #include <filesystem> // the return value of get_exe_dir_path()
-#include <string> 
+
 
 namespace platform_ops_create
 {
@@ -23,8 +23,8 @@ namespace platform_ops_create
 	 *
 	 * @param exe_file_path The base directory path (typically the executable's directory).
 	 *                      Passed by const reference to avoid expensive copy (40 bytes + heap allocation).
-	 * @param data_dir_name The name of the data directory to create (e.g., "data", "output").
-	 *                      Passed by const reference to avoid string copy overhead.
+	 *
+	 * it takes the data dir name from the infrastrucre layer
 	 *
 	 * @return bool Returns true if the directory was newly created, false if it already exists.
 	 *         A false return value is NOT an error—it simply indicates the directory was already present.
@@ -89,5 +89,34 @@ namespace platform_ops_create
 	 **/
 
 	bool create_data_dir(const std::filesystem::path& exe_file_path);
-}//end platform_ops_helper
+
+	/**
+	 * @brief Creates the “original” data file in the data directory.
+	 *
+	 * @details
+	 * Constructs the full path by appending
+	 * infrastructure_names::DATA_DIR_NAME and
+	 * infrastructure_names::ORIGINAL_FILE_NAME to exe_file_path.
+	 * This function **must** be called only after:
+	 * - platform_ops_create::create_data_dir(exe_file_path)
+	 *   to ensure the parent directory exists.
+	 * - file_ops_path::is_original_file_exist(exe_file_path)
+	 *   to ensure the file does not already exist.
+	 * Internally, it opens an std::ofstream on the resulting path to create
+	 * an empty 0-byte file, then immediately closes it.
+	 *
+	 * @param exe_file_path
+	 *   The base directory path (where the executable resides),
+	 *   passed by const reference to avoid copying.
+	 *
+	 * @return bool
+	 *   Returns true if the file was newly created.
+	 *
+	 * @throws std::runtime_error
+	 *   Thrown if opening the std::ofstream fails (e.g., permission denied,
+	 *   invalid path, disk full).
+	 *
+	 */
+	bool create_original_file(const std::filesystem::path& exe_file_path);
+}//end platform_ops_create
 
