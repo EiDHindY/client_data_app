@@ -79,6 +79,9 @@ namespace platform_ops_paths
 
 	bool is_file_exist(const std::filesystem::path& file_path)
 	{
+		// file_path: bound as a const reference, so no deep copy of the path’s internal string occurs here
+		// Returns true if the given path names a regular (non‐directory, non‐symlink) file
 		return std::filesystem::is_regular_file(file_path);
 	}
-}
+
+} // end platform_ops_paths

@@ -49,6 +49,14 @@ namespace platform_ops_paths
 #pragma endregion
 	std::filesystem::path get_original_file_path(const std::filesystem::path& exe_dir_path);
 
+#pragma region is_file_exist Documentation
+	/**
+	 * @brief Checks whether the given path corresponds to an existing regular file.
+	 * @param file_path The filesystem path to check.
+	 * @return bool True if the path exists and is a regular file; false if the path does not exist or is not a regular file.
+	 * @throws std::filesystem::filesystem_error If an error occurs while querying the filesystem (e.g., permission denied, path too long, I/O error).
+	 */
+#pragma endregion
 	bool is_file_exist(const std::filesystem::path& file_path);
 }// platform_ops_paths
 
