@@ -8,11 +8,13 @@ namespace platform_ops_create
 {
 	bool create_data_dir(const std::filesystem::path& exe_file_path)
 	{
-		return std::filesystem::create_directories(exe_file_path / infrastructure_names::DATA_DIR_NAME);
-		// exe_file_path is a filesystem::path type
-		// data_dir_name is implicityly casted from string to filesystem::path as well
-		// the / combine both in a full path
+		// exe_file_path: const reference to the full path of the executable file; no copy incurred
+		// create_directories: creates all non-existing directories in the given path and returns true if any were created
+		return std::filesystem::create_directories(
+			exe_file_path / infrastructure_names::DATA_DIR_NAME  // Append data directory name to EXE path
+		);
 	}
+
 
 	bool create_original_file(const std::filesystem::path& exe_file_path)
 	{

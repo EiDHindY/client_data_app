@@ -4,7 +4,6 @@
 #include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <Windows.h> // for DWORD
 #include <vector> 
-#include <filesystem> 
 #include <libloaderapi.h> // for GetModuleFileNameW
 #include <stdexcept> // for runtime errors
 #include <system_error> 
