@@ -2,7 +2,7 @@
 
 #pragma once // to avoid multiple definitions
 
-#include <filesystem> // the return value of get_exe_dir_path()
+#include <filesystem> 
 
 
 namespace platform_ops_create

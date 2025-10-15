@@ -1,4 +1,4 @@
-﻿//platform_ops/path.cpp
+﻿//platform_ops/paths.cpp
 
 #include "paths.h"
 #include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
@@ -7,7 +7,6 @@
 #include <libloaderapi.h> // for GetModuleFileNameW
 #include <stdexcept> // for runtime errors
 #include <system_error> 
-#include <errhandlingapi.h> for // GetLastError()
 
 
 namespace platform_ops_paths
