@@ -2,13 +2,13 @@
 
 #include "paths.h"
 #include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
-#include <Windows.h>
-#include <stdexcept> // for runtime errors
+#include <Windows.h> // for DWORD
 #include <vector> 
-#include <libloaderapi.h> 
-#include <system_error> 
-#include <errhandlingapi.h> 
 #include <filesystem> 
+#include <libloaderapi.h> // for GetModuleFileNameW
+#include <stdexcept> // for runtime errors
+#include <system_error> 
+#include <errhandlingapi.h> for // GetLastError()
 
 
 namespace platform_ops_paths
@@ -68,15 +68,15 @@ namespace platform_ops_paths
 	}
 
 
-	std::filesystem::path get_original_file_path(const std::filesystem::path& exe_file_path)
+	std::filesystem::path get_original_file_path(const std::filesystem::path& exe_dir_path)
 	{
-		std::filesystem::path original_file_path = std::filesystem::path(
-			exe_file_path
-			/ infrastructure_names::DATA_DIR_NAME
-			/ infrastructure_names::ORIGINAL_FILE_NAME);
-
-		return original_file_path;
+		// exe_dir_path: const reference to an existing path; no copy of the string data occurs here
+		// Function returns a new std::filesystem::path built from exe_dir_path plus two components
+		return exe_dir_path
+			/ infrastructure_names::DATA_DIR_NAME       // Append DATA_DIR_NAME (likely a constexpr string) as a subdirectory
+			/ infrastructure_names::ORIGINAL_FILE_NAME; // Append ORIGINAL_FILE_NAME (likely a constexpr string) as the filename
 	}
+
 
 	bool is_file_exist(const std::filesystem::path& file_path)
 	{
