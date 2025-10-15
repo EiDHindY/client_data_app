@@ -26,35 +26,24 @@ namespace platform_ops_create
 #pragma endregion
 	bool create_data_dir(const std::filesystem::path& exe_file_path);
 
-#pragma region create_original_file_docs
+#pragma region create_original_file Documentation
 	/**
- * @brief Creates the “original” data file in the data directory.
- *
- * @details
- * Constructs the full path by appending
- * infrastructure_names::DATA_DIR_NAME and
- * infrastructure_names::ORIGINAL_FILE_NAME to exe_file_path.
- * This function **must** be called only after:
- * - platform_ops_create::create_data_dir(exe_file_path)
- *   to ensure the parent directory exists.
- * - file_ops_path::is_original_file_exist(exe_file_path)
- *   to ensure the file does not already exist.
- * Internally, it opens an std::ofstream on the resulting path to create
- * an empty 0-byte file, then immediately closes it.
- *
- * @param exe_file_path
- *   The base directory path (where the executable resides),
- *   passed by const reference to avoid copying.
- *
- * @return bool
- *   Returns true if the file was newly created.
- *
- * @throws std::runtime_error
- *   Thrown if opening the std::ofstream fails (e.g., permission denied,
- *   invalid path, disk full).
- *
- */
+	 * @brief Creates an empty original data file in the data directory.
+	 *
+	 * Constructs the full path by appending DATA_DIR_NAME and ORIGINAL_FILE_NAME
+	 * to the executable directory path, then opens the file for writing to create it.
+	 *
+	 * @param exe_file_path  The directory path of the running executable.
+	 *
+	 * @throws std::runtime_error
+	 *   If the file cannot be created or opened. The error message includes the
+	 *   attempted file path.
+	 *
+	 * @note
+	 *   Uses the default std::ofstream mode, which truncates existing files
+	 *   and creates a new file if none exists.
+	 */
 #pragma endregion
-	bool create_original_file(const std::filesystem::path& exe_file_path);
+	void create_original_file(const std::filesystem::path& exe_file_path);
 }//end platform_ops_create
 
