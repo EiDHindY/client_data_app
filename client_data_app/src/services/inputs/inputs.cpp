@@ -1,3 +1,4 @@
+// services/inputs/inputs.cpp
 #include "inputs.h"
 #include <print>
 #include <iostream>
@@ -22,7 +23,7 @@ namespace inputs
 			if (std::cin.fail())          // If extraction failed (non-numeric input)…
 			{
 				std::print(
-					"You didn't enter a valid number, please enter a valid number!\n"); \
+					"You didn't enter a valid number, please enter a valid number!\n"); 
 					// Notify user of invalid format
 
 					std::cin.clear();        // Reset stream error flags (failbit, badbit)
