@@ -8,7 +8,7 @@ namespace inputs
 	unsigned short read_num_from_to(
 		unsigned short from,              // Lower bound (inclusive) for valid input
 		unsigned short to,                // Upper bound (inclusive) for valid input
-		const std::string& message = "")
+		const std::string& message)
 		// Optional prompt message (no copy if empty, otherwise binds to caller’s string)
 
 	{
