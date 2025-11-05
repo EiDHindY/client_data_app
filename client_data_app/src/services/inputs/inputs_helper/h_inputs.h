@@ -24,8 +24,7 @@ namespace inputs_helper {
  * - Uses `<limits>` for `std::numeric_limits<std::streamsize>::max()` when discarding invalid input.
  * - Depends on standard stream state handling (`failbit`, `clear()`, and `ignore()`).
  *
- * @note
- * This function does not check for overflow (values larger than `USHRT_MAX` will wrap when cast)
+ * 
  * **/
 #pragma endregion
 	bool try_read_num(std::istringstream& input, unsigned short& out_value);

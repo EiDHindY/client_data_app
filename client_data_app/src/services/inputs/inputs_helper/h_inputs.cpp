@@ -1,5 +1,5 @@
 #include "h_inputs.h"
-#include <limits>
+#include <climits>
 
 
 
@@ -13,19 +13,9 @@ namespace inputs_helper {
         // If extraction fails (bad input), set result to false.
         if (!(input >> temp))
             result = false;
+     
 
-        // Reject negative numbers, as they cannot be represented in unsigned short.
-        if (temp < 0)
-            result = false;
-
-        // If extraction failed or number invalid, reset stream state and discard bad input.
-        if (!result)
-        {
-            input.clear(); // Clear error flags (failbit, badbit, etc.)
-            input.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
-        }
-
-        // If all checks passed, assign value safely to the output variable.
+        // If all check passed, assign value safely to the output variable.
         if (result)
             out_value = static_cast<unsigned short>(temp);
 
@@ -35,6 +25,6 @@ namespace inputs_helper {
 
 	bool is_num_in_range(unsigned short num, unsigned short from, unsigned short to)
 	{
-		return (num >= from && num <= to);
-	}
+        return (num >= from) && (num <= to) && (num > 0) && (num <= USHRT_MAX);
+    }
 } // end inputs_helper

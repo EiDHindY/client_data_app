@@ -1,38 +1,38 @@
 // services/inputs/inputs.cpp
 #include "inputs.h"
-#include <print>
 #include <sstream>
+#include <limits>
 #include "inputs_helper/h_inputs.h"
+
+
 
 namespace inputs
 {
 
-
-
-	unsigned short read_num_from_to(
+	enReadResult read_num_from_to(
 		std::istringstream& input,
 		unsigned short from,              // Lower bound (inclusive) for valid input
-		unsigned short to)                // Upper bound (inclusive) for valid input
+		unsigned short to,
+		unsigned short& out_value)                // Upper bound (inclusive) for valid input
 		
 	{
-		unsigned short num{};
-		while (true)
-		{
-			if (!inputs_helper::try_read_num(input, num))
-			{
-				std::print("Please enter a valid number!\n\n");
-				continue;
-			}
-
-			if (!inputs_helper::is_num_in_range(num, from, to))
-			{
-				std::print("Please enter a number between {} and {}\n\n", from, to);
-				continue;
-			}
-			break;
+		if (!inputs_helper::try_read_num(input, out_value)) {
+			input.clear(); // Clear error flags (failbit, badbit, etc.)
+			input.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+			return enReadResult::Invalid_input;
 		}
 
-		return num;                       
+
+
+		if (!inputs_helper::is_num_in_range(out_value, from, to)) {
+			input.clear(); // Clear error flags (failbit, badbit, etc.)
+			input.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+			return enReadResult::Out_of_range;
+			}
+
+		input.clear();
+		input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return enReadResult::pass;                       
 	}
 
 }
