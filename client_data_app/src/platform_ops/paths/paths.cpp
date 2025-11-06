@@ -5,7 +5,6 @@
 #include <Windows.h> // for DWORD
 #include <vector> 
 
-
 namespace platform_ops_paths
 {
 	std::filesystem::path get_exe_dir_path()  // Returns the directory of the running .exe 

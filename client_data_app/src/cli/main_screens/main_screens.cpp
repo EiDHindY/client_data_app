@@ -5,7 +5,7 @@
 
 namespace main_screens
 {
-	menu_options::enMenuOptions show_menu_screen()
+	void()
 	{
 		std::print("=================================================================\n");
 		std::print("                        Main Menu Screen                         \n");
@@ -17,7 +17,5 @@ namespace main_screens
 		std::print("          [5] Find Client.\n");
 		std::print("          [6] Exit.\n");
 		std::print("=================================================================\n\n");
-		unsigned short num = inputs::read_num_from_to(1, 6, "Choose what do you want to do? [1 to 6]? ");
-		return static_cast<menu_options::enMenuOptions>(num);
 	}
 }

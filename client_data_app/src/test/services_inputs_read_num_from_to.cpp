@@ -2,7 +2,6 @@
 
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
 #include "include/catch.hpp"
-//#include <catch2/catch.hpp>
 
 #include "../services/inputs/inputs.h"
 #include <sstream>
