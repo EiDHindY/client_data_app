@@ -1,6 +1,7 @@
 // controller/helper/h_handle_file_exist.h
 
 #pragma once
+#include <filesystem>
 
 namespace h_controller
 {
@@ -34,5 +35,5 @@ namespace h_controller
 	 *   - All path objects are passed by const reference to minimize heap allocations.
 	 */
 #pragma endregion	
-	void handle_file_exist(const std::filesystem::path& exe_dir_path);
+	void handle_file_exist(const std::filesystem::path&  exe_dir_path);
 }

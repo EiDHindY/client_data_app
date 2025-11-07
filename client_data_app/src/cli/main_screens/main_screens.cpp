@@ -1,11 +1,10 @@
 
 #include "main_screens.h"      // Brings in the declaration of show_menu_screen and any related UI functions
-#include "services/inputs/inputs.h"    // Declares inputs::read_num_from_to for validated user input
 #include <print>                       // Provides std::print (C++23) for formatted console output
 
 namespace main_screens
 {
-	void()
+	void show_menu_screen()
 	{
 		std::print("=================================================================\n");
 		std::print("                        Main Menu Screen                         \n");

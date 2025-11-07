@@ -11,9 +11,9 @@ namespace inputs
 
 	enReadResult read_num_from_to(
 		std::istringstream& input,
-		unsigned short from,              // Lower bound (inclusive) for valid input
+		unsigned short from,              
 		unsigned short to,
-		unsigned short& out_value)                // Upper bound (inclusive) for valid input
+		unsigned short& out_value)                
 		
 	{
 		if (!inputs_helper::try_read_num(input, out_value)) {
