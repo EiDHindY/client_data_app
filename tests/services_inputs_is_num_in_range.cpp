@@ -1,8 +1,8 @@
 // / test/services_inputs_is_num_in_range.cpp
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
-#include "include/catch.hpp"
+#include "catch_amalgamated.hpp"
 #include <limits>
-#include "../services/inputs/inputs_helper/h_inputs.h"
+#include "h_inputs.h"
 
 
 

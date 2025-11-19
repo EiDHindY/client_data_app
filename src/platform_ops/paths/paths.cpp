@@ -1,7 +1,7 @@
 ﻿//platform_ops/paths.cpp
 
 #include "paths.h"
-#include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
+#include "infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <Windows.h> // for DWORD
 #include <vector> 
 

@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "infrastructure/infrastructure.h"
+#include "infrastructure.h"
 
 namespace start_program_controller
 {

@@ -1,6 +1,6 @@
 ﻿// platform_ops/create.cpp
 #include "create.h"
-#include "infrastructure/infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
+#include "infrastructure.h"  // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <fstream>
 #include <stdexcept> // for runtime errors
 

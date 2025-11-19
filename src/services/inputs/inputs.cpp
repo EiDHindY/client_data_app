@@ -2,7 +2,7 @@
 #include "inputs.h"
 #include <sstream>
 #include <limits>
-#include "inputs_helper/h_inputs.h"
+#include "h_inputs.h"
 
 
 

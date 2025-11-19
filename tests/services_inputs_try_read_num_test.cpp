@@ -1,8 +1,8 @@
 // test/services_inputs_try_read_num_test.cpp
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
-#include "include/catch.hpp"
+#include "catch_amalgamated.hpp"
 #include <sstream>
-#include "../services/inputs/inputs_helper/h_inputs.h"
+#include "h_inputs.h"
 
 TEST_CASE("try_read_num: valid positive integer", "[try_read_num]") {
     std::istringstream input("123");
