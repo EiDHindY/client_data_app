@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CDA.cpp">
+    <ClCompile Include="tests\create_create_data_dir.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\create_create_original_file.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

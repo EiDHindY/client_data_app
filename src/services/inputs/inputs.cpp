@@ -1,7 +1,9 @@
 // services/inputs/inputs.cpp
 #include "inputs.h"
 #include <sstream>
+#include <string>
 #include <limits>
+#include <iostream>
 #include "h_inputs.h"
 
 
@@ -11,10 +13,10 @@ namespace inputs
 
 	enReadResult read_num_from_to(
 		std::istringstream& input,
-		unsigned short from,              
+		unsigned short from,
 		unsigned short to,
-		unsigned short& out_value)                
-		
+		unsigned short& out_value)
+
 	{
 		if (!inputs_helper::try_read_num(input, out_value)) {
 			input.clear(); // Clear error flags (failbit, badbit, etc.)
@@ -28,11 +30,20 @@ namespace inputs
 			input.clear(); // Clear error flags (failbit, badbit, etc.)
 			input.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
 			return enReadResult::Out_of_range;
-			}
+		}
 
 		input.clear();
 		input.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-		return enReadResult::pass;                       
+		return enReadResult::pass;
 	}
 
+	std::string read_string()
+	{
+		std::cin.clear(); // Clear error flags (failbit, badbit, etc.)
+		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+
+		std::string input;
+		std::getline(std::cin, input);
+		return input;
+	}
 }

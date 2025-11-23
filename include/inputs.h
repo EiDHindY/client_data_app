@@ -49,4 +49,45 @@ namespace inputs
 		unsigned short to,
 		unsigned short& out_value);
 
+#pragma region read_account_number Documentation
+	/*
+		Function: read_string
+
+		Description:
+			Reads a line of text from standard input (std::cin) safely.
+			Handles possible input errors (like stream failing or user interrupt), clears
+			error flags, and flushes invalid input before retrying.
+			Returns the string entered by the user, or an empty string if input was invalid.
+
+		Parameters:
+			None
+
+		Returns:
+			std::string
+				- On success: returns the user's input as a string
+				- On error (input stream bad/fail, user enters an invalid line, Ctrl+D/Z): returns an empty string ("")
+				- On exception (rare, e.g. hardware/OS failure): function will not catch unrecoverable exceptions
+
+		Notes:
+			- The function clears any errors detected on std::cin, both before and after trying to get input.
+			- Displays an error message if input failed.
+			- This function does not throw exceptions.
+			- Good for data entry scenarios where you want to avoid infinite loops on bad input.
+
+		Side Effects:
+			- If input was invalid, will clear stream errors and ignore any leftover characters from std::cin, preventing accidental input loops.
+			- Prints an error message to std::cout if std::getline fails.
+
+		Big O:
+			- Time: O(n), where n is the number of characters ignored/skipped on error or up to the newline character.
+			- Space: O(m), where m is the size of the input string (proportional to the length of a line entered).
+
+		Alternatives:
+			- For more robust input (validation, custom prompts), consider adding parameter(s) or using a template or functor.
+			- For non-interactive code (reading from files), modify the function to take an std::istream& parameter.
+
+	*/
+#pragma endregion
+	std::string read_account_number();
+
 }
