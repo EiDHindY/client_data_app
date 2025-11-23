@@ -41,3 +41,11 @@
 *.dwo
 
 .vs/
+
+Debug/
+Release/
+*.log
+*.tlog
+*.idb
+*.recipe
+CDA/x64/Debug/
