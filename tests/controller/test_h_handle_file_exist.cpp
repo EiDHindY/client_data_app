@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
 
-#include <catch2/catch.hpp>
+#include "catch_amalgamated.hpp"
 #include <filesystem>
 #include "infrastructure/infrastructure.h"
 #include "controller/helper/h_handle_file_exist.h"

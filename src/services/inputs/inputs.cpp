@@ -37,13 +37,23 @@ namespace inputs
 		return enReadResult::pass;
 	}
 
-	std::string read_string()
+	std::string read_account_number()
 	{
-		std::cin.clear(); // Clear error flags (failbit, badbit, etc.)
-		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+		if (!std::cin.good())
+		{
+			std::cin.clear(); // Clear error flags (failbit, badbit, etc.)
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+		}
+
 
 		std::string input;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "invalid input, please enter an account number and try again";
+			std::cin.clear(); // Clear error flags (failbit, badbit, etc.)
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip to next line.
+			return "";
+		}
 		return input;
 	}
 }
