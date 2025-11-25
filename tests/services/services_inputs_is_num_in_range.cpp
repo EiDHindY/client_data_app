@@ -2,7 +2,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
 #include "catch_amalgamated.hpp"
 #include <limits>
-#include "h_inputs.h"
+#include "services/inputs/h_inputs.h"
 
 
 

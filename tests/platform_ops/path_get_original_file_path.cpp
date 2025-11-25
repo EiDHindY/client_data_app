@@ -1,7 +1,7 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main()
 
 #include "catch_amalgamated.hpp"
-#include "paths.h"
+#include "platform_ops/paths/paths.h"
 #include <filesystem>
 
 using namespace platform_ops_paths;

@@ -1,10 +1,10 @@
 // services/inputs/inputs.cpp
-#include "inputs.h"
+#include "services/inputs/inputs.h"
 #include <sstream>
 #include <string>
 #include <limits>
 #include <iostream>
-#include "h_inputs.h"
+#include "services/inputs/h_inputs.h"
 
 
 

@@ -2,50 +2,29 @@
 *.d
 
 # Compiled Object files
-*.slo
-*.lo
 *.o
 *.obj
 
-# Precompiled Headers
-*.gch
-*.pch
-
-# Linker files
-*.ilk
-
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
 # Executables
 *.exe
-*.out
-*.app
+*.pdb
+*.ilk
 
-# debug information files
-*.dwo
-
+# IDE / Editor Files
+.vscode/
 .vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
 
+# Build Directories
+build/
+bin/
+x64/
 Debug/
 Release/
-*.log
-*.tlog
-*.idb
-*.recipe
-CDA/x64/Debug/
+
+task.md
+
+architecture_and_design/
