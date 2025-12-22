@@ -5,26 +5,32 @@
 *.o
 *.obj
 
-# Executables
-*.exe
-*.pdb
+# Linker/Debugger
 *.ilk
+*.pdb
 
-# IDE / Editor Files
+# Metadata / Assets (From GitHub)
+task.md
+architecture_and_design/
+
+# Linux / CMake / Build (Your Migration)
+build/
+.cache/
+bin/
+Makefile
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+
+# IDEs
 .vscode/
 .vs/
-*.sln
-*.vcxproj
-*.vcxproj.filters
-*.vcxproj.user
 
-# Build Directories
-build/
-bin/
-x64/
+# Legacy Windows leftovers
 Debug/
 Release/
-
-task.md
-
-architecture_and_design/
+*.log
+*.tlog
+*.idb
+*.recipe
+CDA/x64/Debug/
