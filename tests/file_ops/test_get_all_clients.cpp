@@ -1,6 +1,6 @@
 // tests/file_ops/test_get_all_clients.cpp
 #include "catch_amalgamated.hpp"
-#include "file_ops.h"
+#include "file_ops/file_ops.h"
 #include <filesystem> // For std::filesystem functions
 #include <fstream>    // For file creation/manipulation
 #include <string>

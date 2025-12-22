@@ -1,6 +1,6 @@
 // services/inputs/inputs.cpp
-#include "inputs.h"
-#include "h_inputs.h"
+#include "services/inputs/inputs.h"
+#include "services/inputs/h_inputs.h"
 #include <iostream>
 #include <limits>
 #include <sstream>
@@ -48,3 +48,4 @@ std::string read_account_number() {
   }
   return input;
 }
+} // namespace inputs

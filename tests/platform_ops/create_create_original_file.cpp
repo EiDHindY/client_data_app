@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()
 
 #include "catch_amalgamated.hpp"
-#include "create.h"
 #include "infrastructure.h" // For DATA_DIR_NAME and ORIGINAL_FILE_NAME
+#include "platform_ops/create/create.h"
 #include <filesystem>
 #include <fstream>
 

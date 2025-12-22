@@ -1,6 +1,6 @@
 ﻿// platform_ops/paths.cpp
 
-#include "paths.h"
+#include "platform_ops/paths/paths.h"
 #include "infrastructure.h" // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <filesystem>
 #ifdef _WIN32

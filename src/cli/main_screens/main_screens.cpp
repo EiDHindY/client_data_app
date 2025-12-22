@@ -1,4 +1,4 @@
-#include "main_screens.h" // Brings in the declaration of show_menu_screen and any related UI functions
+#include "cli/main_screens/main_screens.h"
 #include <print> // Provides std::print (C++23) for formatted console output
 
 namespace main_screens {
@@ -18,3 +18,4 @@ void show_menu_screen() {
   std::print(
       "=================================================================\n\n");
 }
+} // namespace main_screens

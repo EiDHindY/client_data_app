@@ -1,5 +1,6 @@
-#include "h_inputs.h"
+#include "services/inputs/h_inputs.h"
 #include <climits>
+#include <sstream>
 
 namespace inputs_helper {
 bool try_read_num(std::istringstream &input, unsigned short &out_value) {

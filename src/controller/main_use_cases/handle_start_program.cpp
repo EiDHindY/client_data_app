@@ -1,10 +1,10 @@
 ﻿// controller/main_use_cases/handle_start_program.cpp
 
-#include "handle_start_program.h" // Declaration of start_program() function
-#include "h_handle_file_exist.h"  // Declaration of handle_file_exist() helper
-#include "inputs.h"
-#include "main_screens.h" // Declaration of show_menu_screen()
-#include "paths.h"
+#include "controller/main_use_cases/handle_start_program.h" // Declaration of start_program() function
+#include "cli/main_screens/main_screens.h" // Declaration of show_menu_screen()
+#include "controller/helper/h_handle_file_exist.h" // Declaration of handle_file_exist() helper
+#include "platform_ops/paths/paths.h"
+#include "services/inputs/inputs.h"
 #include <iostream>
 #include <print>
 

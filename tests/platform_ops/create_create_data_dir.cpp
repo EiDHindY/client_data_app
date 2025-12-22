@@ -1,8 +1,8 @@
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()
 
 #include "catch_amalgamated.hpp"
-#include "create.h"
 #include "infrastructure.h"
+#include "platform_ops/create/create.h"
 
 using namespace platform_ops_create;
 

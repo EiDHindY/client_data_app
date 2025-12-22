@@ -1,5 +1,5 @@
 ﻿// platform_ops/create.cpp
-#include "create.h"
+#include "platform_ops/create/create.h"
 #include "infrastructure.h" // for DATA_DIR_NAME, ORIGINAL_FILE_NAME
 #include <fstream>
 #include <stdexcept> // for runtime errors
@@ -45,3 +45,4 @@ void create_original_file(const std::filesystem::path &exe_file_path) {
   // Closes the file: flushes buffers, releases file descriptor back to OS, and
   // returns CPU control to user mode
 }
+} // namespace platform_ops_create

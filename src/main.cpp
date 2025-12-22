@@ -2,8 +2,8 @@
 // and ends there.
 //
 
-#include "h_handle_file_exist.h"
-#include "paths.h"
+#include "controller/helper/h_handle_file_exist.h"
+#include "platform_ops/paths/paths.h"
 #include <iostream>
 
 int main() {

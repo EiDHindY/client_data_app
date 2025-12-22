@@ -1,7 +1,7 @@
 // test/services_inputs_try_read_num_test.cpp
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()
 #include "catch_amalgamated.hpp"
-#include "h_inputs.h"
+#include "services/inputs/h_inputs.h"
 #include <sstream>
 
 TEST_CASE("try_read_num: valid positive integer", "[try_read_num]") {

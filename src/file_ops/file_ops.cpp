@@ -1,7 +1,6 @@
 // src/file_ops/file_ops.cpp
-#include <file_ops.h>
+#include "file_ops/file_ops.h"
 #include <fstream>
-#include <iostream>
 namespace file_ops {
 std::vector<std::string>
 get_all_clients(const std::filesystem::path &file_path) {
@@ -32,3 +31,4 @@ get_all_clients(const std::filesystem::path &file_path) {
   // Memory: Vector copies/moves to caller; destructor cleans up 'file', 'line',
   // and local vector.
 }
+} // namespace file_ops

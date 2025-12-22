@@ -14,4 +14,3 @@ file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 # Create the final executable
 add_executable(Safecoin ${SOURCES})
-

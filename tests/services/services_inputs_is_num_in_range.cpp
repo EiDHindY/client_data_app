@@ -1,7 +1,7 @@
 // / test/services_inputs_is_num_in_range.cpp
 #define CATCH_CONFIG_MAIN // This tells Catch to provide a main()
 #include "catch_amalgamated.hpp"
-#include "h_inputs.h"
+#include "services/inputs/h_inputs.h"
 #include <limits>
 
 // Test the range function for menu-choice style input (1..6)
