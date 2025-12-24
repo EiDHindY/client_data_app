@@ -36,7 +36,8 @@ TEST_CASE("get_exe_dir_path contains the running exe", "[integration]") {
   // Test if running exe is inside directory returned
   // Note: You'd need GetModuleFileNameW to get exe name too; here, check some
   // known file in dir.
-  std::string expected_file = "Client_data_app.exe";
+  char sep = std::filesystem::path::preferred_separator;
+  std::string expected_file = "SafecoinTests";
   bool found = false;
   for (const auto &entry : std::filesystem::directory_iterator(exe_dir)) {
     if (entry.path().filename() == expected_file)
@@ -54,7 +55,8 @@ TEST_CASE("get_exe_dir_path does not throw under normal conditions") {
 TEST_CASE("get_exe_dir_path matches expected tail directory", "[integration]") {
   auto exe_dir = get_exe_dir_path();
   // Assuming in development/build folder "Client_data_app"
-  std::filesystem::path expected_tail = "Debug";
+  char sep = std::filesystem::path::preferred_separator;
+  std::string expected_tail = std::string("client_data_app") + sep + "build";
   REQUIRE(path_ends_with(exe_dir, expected_tail));
 }
 

@@ -38,8 +38,8 @@ TEST_CASE("get_original_file_path works for empty exe directory path") {
 }
 
 TEST_CASE("get_original_file_path works for Windows-style path") {
-  std::filesystem::path base = "C:\\ProgramFiles";
-  std::filesystem::path expected = "C:/ProgramFiles/data/clients.csv";
+  std::filesystem::path base = std::filesystem::path("C:") / "ProgramFiles";
+  std::filesystem::path expected = base / "data" / "clients.csv";
   // Compare parent_path() if needed, or use .lexically_normal() for
   // normalization
   REQUIRE(get_original_file_path(base).lexically_normal() ==
