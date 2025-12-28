@@ -22,5 +22,7 @@ namespace h_convert {
      * @param indexes [Output] Vector to store the starting positions (indices) of found delimiters.
      */
 #pragma endregion Detection
-    void detect_delim(std::string_view str, std::string_view delim, std::vector<short>& indexes);
+    void detect_delim(std::string_view str, std::string_view delim, std::vector<size_t>& indexes);
+
+    std::vector<std::string> h_conv_str_vstr(std::string_view str_record);
 } 

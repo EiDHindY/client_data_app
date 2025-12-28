@@ -9,7 +9,7 @@
 
 namespace h_convert {
 
-    void detect_delim(std::string_view str, std::string_view delim, std::vector<short>& indexes)
+    void detect_delim(std::string_view str, std::string_view delim, std::vector<size_t>& indexes)
     {
         // Guard Clause: Check if the string is valid and large enough to contain the delimiter
         if (str.empty() || str.length() < delim.length()) 
@@ -54,25 +54,42 @@ namespace h_convert {
             }
         }
     }
-    
+   
 
-    // std::vector<std::string> h_conv_str_vstr(std::string_view str_record)
-    // {
-    //     std::vector<std::string> v_record{};
-    //     int record_size = str_record.length();
-    //     std::string_view delim = infrastructure_names::SEPARATOR;
-    //     for(int i = 0; i < record_size - 1; i++)
-    //     {
-            
-    //         for(int j = 0; j < delim.length() -1; j++)
-    //         {
-    //             if (str_record[i])
-    //         }
-    //     }
+    std::vector<std::string> h_conv_str_vstr(std::string_view str_record)
+    {
+        std::vector<std::string> vec_of_str{};
+        if (str_record.empty()) return vec_of_str;
+        std::vector<size_t> vec_of_idx{};
+        std::string_view delim = infrastructure_names::SEPARATOR;
 
+        h_convert::detect_delim(str_record, delim, vec_of_idx);
 
-    // }
+        size_t str_record_size = str_record.size();
+        size_t vec_of_idx_size = vec_of_idx.size();
+        size_t delim_size = delim.size();
+        size_t start_word{};
+        
+        std::string word{};
 
+        for(size_t i = 0; i < vec_of_idx_size; i++)
+        {
+            while(start_word != vec_of_idx[i])
+            {
+                word+=str_record[start_word];
+                start_word++;
+            }
+            start_word+=delim_size;
+            vec_of_str.push_back(word);
+            word.clear();
 
-
+        }
+        while(start_word < str_record_size)
+        {
+            word+=str_record[start_word];
+            start_word++;
+        }
+        vec_of_str.push_back(word);
+        return vec_of_str;
+    }
 } // namespace h_convert

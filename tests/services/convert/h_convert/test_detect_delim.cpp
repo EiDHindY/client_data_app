@@ -1,11 +1,12 @@
 #include "catch_amalgamated.hpp"
+#include <cstddef>
 #include <string_view>
 #include <vector>
 #include "services/convert/h_convert/h_convert.h"
 
 TEST_CASE("detect_delim basic functionality", "[h_convert]") {
     std::string_view delim = "#//#";
-    std::vector<short> indexes;
+    std::vector<size_t> indexes;
 
     SECTION("Finds multiple delimiters in standard string") {
         // 01234567890
@@ -21,7 +22,7 @@ TEST_CASE("detect_delim basic functionality", "[h_convert]") {
 
 TEST_CASE("detect_delim edge cases", "[h_convert]") {
     std::string_view delim = "#//#";
-    std::vector<short> indexes;
+    std::vector<size_t> indexes;
 
     SECTION("No delimiters present") {
         h_convert::detect_delim("HelloWorld", delim, indexes);
